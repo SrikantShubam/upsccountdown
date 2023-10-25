@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins&display=swap');
+*, *::before, *::after {
+    box-sizing: border-box;
+
+}
+
+body{
+   
+    background-color: black;
+    color: white;
+}
+#head_text{
+    text-transform: uppercase; 
+font-family: 'Poppins',sans-serif; 
+font-size: 3rem;
+}
+.decor{
+    background: linear-gradient(90deg, #FF512F 50%, #DD2476 168.66%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin: 0 10px;
+}
+.top{
+    margin-top: 3rem;
+}
+.card-2{
+    border-radius: 0.875rem;
+    border: 1px solid #FFF;
+    padding: 2rem;
+    padding-right: 3rem;
+    color: white;
+    background: #000;
+    margin-top: 3rem;
+margin-bottom: 3rem;
+height: 19rem;
+
+}
+
+h3{
+    padding-top: 1.3rem;
+    color: #FFF;
+font-family: 'Inter';
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+h1{
+    margin-top: 1rem;
+    color: #FFF;
+font-family: 'Inter';
+font-size: 2.25rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 1rem;
+}
+button{
+    color: #FFF!important;
+font-family: 'Inter';
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding: 0!important;
+}
+.btn:hover svg {
+    margin-left: 8px; /* Add space between the text and the icon */
+    vertical-align: middle;
+    animation: ease-in; /* Align the icon with the text */
+    transition-timing-function: linear;
+}
+.box{
+    border-radius: 0.6875rem;
+    border: 2px solid #FFF;
+    background: rgba(255, 255, 255, 0.00);
+   padding: 1rem !important;;
+   /* width: 7rem; */
+
+}
+footer {
+    margin-top: 400px;
+    background-color: #000000; /* Set the background color */
+    color: #ffffff; /* Set the text color */
+    padding: 10px; /* Add padding for spacing */
+ 
+    position: absolute; /* Position the footer at the bottom */
+    left: 0; /* Stick to the left edge of the viewport */
+    bottom: 0; /* Stick to the bottom of the viewport */
+ 
+    width: 100%;
+}
+h2{
+    color: #FFF;
+font-family: 'Inter';
+font-size: 1.5rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.row,.card-2{
+    display: flex!important;
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    #head_text{
+        margin-top: 10rem;
+
+  }
+}
+@media only screen and (max-width: 767px) {
+    .card-2{
+        height: 20rem;
+    }
+    .box{
+        padding: 1rem!important;
+       
+        
+    }
+    h1{
+        font-size: 1.25rem;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    .container{
+        width: 75%;
+    }
+    #head_text{
+        font-size: 2.5rem;
+        margin-top: 4rem;
+       
+    }
+    .decor{
+        margin: 0 !important;
+    }
+    .card-2{
+        padding: 1rem;
+    }
+    #content{
+        order: 2;
+    }
+    .countdown{
+        order: 1;
+    }
+    footer {
+       /* Reduce horizontal padding */
+   
+    max-width: 100vh;
+    margin: 0 auto;
+        
+    }
+    
+    footer h6 {
+        font-size: 14px; /* Decrease font size for readability on smaller screens */
+        margin: 5px 0; /* Add some vertical margin for spacing */
+    }
+}
+

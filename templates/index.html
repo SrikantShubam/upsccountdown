@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UPSC Countdown</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet"  type= "text/css" href= "{{ url_for('static',filename='style.css') }}"/>
+    <link rel="icon" href="{{ url_for('static', filename='/assets/icon.png') }}">
+
+  </head>
+  <body>
+    <div class="container text-center" id="head_text">
+      
+        <span>Welcome to </span>
+        <span class="decor">UPSC Countdown</span>
+      </div>
+  
+
+
+
+  
+
+    <div class="container top">
+        <div class="row g-5">
+            <!-- Start the columns outside the loop -->
+            <div class="col-md-6 col-sm-12">
+                {% for exam in exams %}
+                    {% if loop.index % 2 == 1 %} <!-- Check if the loop index is odd -->
+                    <div class="row card-2">
+                        <div class="col-md-8 col-sm-12" id="content">
+                            <h3>{{ exam['Date of Commencement of Exam'] }}</h3>
+                            <h1>{% if exam['Name of Examination']|length > 35 %}
+                                {{ exam['Name of Examination'][:35] }}...
+                            {% else %}
+                                {{ exam['Name of Examination'] }}
+                            {% endif %}</h1>
+                            <div class="d-flex">
+                                <!-- You might need to update the link href dynamically -->
+                                <a href="{{ url_for('exam_detail', exam_name=exam['Name of Examination']) }}">
+                                <button class="btn">
+                                  View More
+                                  <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="11"
+                height="16"
+                viewBox="0 0 11 16"
+                fill="none"
+              >
+                <path
+                  d="M0.805664 13.7055L7.05664 7.76518L0.805664 1.82482L2.73009 0L10.9191 7.76518L2.73009 15.5304L0.805664 13.7055Z"
+                  fill="url(#paint0_linear_251_67)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_251_67"
+                    x1="3.75373"
+                    y1="15.5304"
+                    x2="13.99"
+                    y2="15.5304"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#FF512F" />
+                    <stop
+                      offset="1"
+                      stop-color="#DD2476"
+                      stop-opacity="0"
+                    />
+                  </linearGradient>
+                </defs>
+              </svg>
+                                </button>
+                            </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-12 text-center d-flex flex-row align-items-center justify-content-center countdown" id="">
+                            <div class="d-flex flex-column align-items-center mx-2">
+                                <h1 class="box" id="Days" style="width: 100px;">{{ exam['countdown'] }}</h1>
+                                <h2>Days</h2>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <!-- This part will be updated by JavaScript -->
+                                <h1 class="box" id="Hours" style="width: 100px;"></h1>
+                                <h2>Hours</h2>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            
+            <div class="col-md-6 col-sm-12">
+                {% for exam in exams %}
+                    {% if loop.index % 2 == 0 %} <!-- Check if the loop index is even -->
+                    <div class="row card-2">
+                        <div class="col-md-8 col-sm-12" id="content">
+                            <h3>{{ exam['Date of Commencement of Exam'] }}</h3>
+                            <h1>{% if exam['Name of Examination']|length > 35 %}
+                                {{ exam['Name of Examination'][:30] }}...
+                            {% else %}
+                                {{ exam['Name of Examination'] }}
+                            {% endif %}</h1>
+                            <div class="d-flex">
+                                <!-- You might need to update the link href dynamically -->
+                                <a href="{{ url_for('exam_detail', exam_name=exam['Name of Examination']) }}">
+                                <button class="btn">
+                                  View More
+                                  <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="11"
+                height="16"
+                viewBox="0 0 11 16"
+                fill="none"
+              >
+                <path
+                  d="M0.805664 13.7055L7.05664 7.76518L0.805664 1.82482L2.73009 0L10.9191 7.76518L2.73009 15.5304L0.805664 13.7055Z"
+                  fill="url(#paint0_linear_251_67)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_251_67"
+                    x1="3.75373"
+                    y1="15.5304"
+                    x2="13.99"
+                    y2="15.5304"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#FF512F" />
+                    <stop
+                      offset="1"
+                      stop-color="#DD2476"
+                      stop-opacity="0"
+                    />
+                  </linearGradient>
+                </defs>
+              </svg>
+                                </button>
+                            </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-12 text-center d-flex flex-row align-items-center justify-content-center countdown" >
+                            <div class="d-flex flex-column align-items-center mx-2">
+                                <h1 class="box" id="Days"style="width: 100px;">{{ exam['countdown'] }}</h1>
+                                <h2>Days</h2>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <!-- This part will be updated by JavaScript -->
+                                <h1 class="box" id="Hours" style="width: 100px;"></h1>
+                                <h2>Hours</h2>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container text-center mt-5 my-5">
+      <div>Please not the above dates are liable to change please confirm with the offical channels</div>
+  </div>
+    
+
+    <script src="{{ url_for('static', filename='maincount.js') }}"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyApjKUiVWas8H4YJy6s3P4kyExkxu_hjO0",
+        authDomain: "countdown-96f46.firebaseapp.com",
+        projectId: "countdown-96f46",
+        storageBucket: "countdown-96f46.appspot.com",
+        messagingSenderId: "588908142385",
+        appId: "1:588908142385:web:1d85be2f49835e0eee9a10",
+        measurementId: "G-G3JBDC7EG3"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+   
+  </body>
+</html>
