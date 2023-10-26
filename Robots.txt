@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /private/
+Sitemap: https://upsccountdown.vercel.app/sitemap.xml
