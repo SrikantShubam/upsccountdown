@@ -6,9 +6,11 @@ import os
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 csv_file = os.path.join(app.root_path, 'static', 'assets', 'dates.csv')
+
+
 @app.route('/')
 def index():
-    exams = load_sorted_exams_from_csv('./static/assets/dates.csv')
+    exams = load_sorted_exams_from_csv(csv_file)
     for exam in exams:
         exam['countdown'] = countdown_to_date(exam['Date of Commencement of Exam'])
    
@@ -40,7 +42,7 @@ def countdown_to_date(date_str):
 
 @app.route('/exam-detail/<exam_name>-<year>')
 def exam_detail(exam_name, year):
-    exams = load_sorted_exams_from_csv('./static/assets/dates.csv')
+    exams = load_sorted_exams_from_csv(csv_file)
     exam = next((e for e in exams if e['url_exam_name'] == exam_name and str(e['Year']) == year), None)
     print("Looking for:", exam_name.replace('-', ' ').title(), year)
     if exam:
