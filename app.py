@@ -45,7 +45,7 @@ def exam_detail(exam_name, year):
     print("Looking for:", exam_name.replace('-', ' ').title(), year)
     if exam:
         exam['countdown'] = countdown_to_date(exam['Date of Commencement of Exam'])
-        return render_template('exam_details.html', exam=exam)
+        return render_template('exam_details.html', exam=exam,meta_description=exam['Keywords'],exam_name=exam['Name of Examination'])
     else:
         return "Exam not found", 404
 
