@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 import csv
 import datetime
 import re
@@ -50,6 +50,9 @@ def exam_detail(exam_name, year):
         return render_template('exam_details.html', exam=exam,meta_description=exam['Keywords'],exam_name=exam['Name of Examination'])
     else:
         return "Exam not found", 404
-
+    
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('static', 'sitemap.xml')
 if __name__ == "__main__":
     app.run(debug=True)
