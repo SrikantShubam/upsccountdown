@@ -2,10 +2,10 @@ from flask import Flask, render_template
 import csv
 import datetime
 import re
-
+import os
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-
+csv_file = os.path.join(app.root_path, 'static', 'assets', 'dates.csv')
 @app.route('/')
 def index():
     exams = load_sorted_exams_from_csv('./static/assets/dates.csv')
