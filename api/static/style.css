@@ -22,7 +22,34 @@ background-clip: text;
 margin: 0 10px;
 }
 .top{
-    margin-top: 3rem;
+    margin-top: 8rem;
+}
+.classify{
+    display: flex;
+    align-items: center; /* Vertically center */
+    justify-content: center; 
+    margin-top: -4rem;
+  text-align: center;
+   
+    width: 7.375rem;
+height: 2.0625rem;
+padding: 20px;
+
+border-radius: 0.75rem;
+
+}
+.upcoming{
+    background: linear-gradient(94deg, #FF3B15 47.01%, rgba(221, 36, 118, 0.00) 120.75%);
+}
+.popular{
+    background: linear-gradient(90deg, #D4145A 50%, rgba(251, 176, 59, 0.50) 131.26%);
+}
+.classify h6{
+    text-transform: uppercase;
+    font-family: 'Poppins';
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
 }
 .card-2{
     border-radius: 0.875rem;
@@ -31,8 +58,8 @@ margin: 0 10px;
     padding-right: 3rem;
     color: white;
     background: #000;
-    margin-top: 3rem;
-margin-bottom: 3rem;
+    margin-top: 0.5rem;
+margin-bottom: 0.5rem;
 height: 19rem;
 
 }
@@ -156,6 +183,14 @@ line-height: normal;
     footer h6 {
         font-size: 14px; /* Decrease font size for readability on smaller screens */
         margin: 5px 0; /* Add some vertical margin for spacing */
+    }
+    .classify{
+        position: absolute;
+       z-index: 100;
+      
+  margin-top: -165px;
+       padding: 20px;
+       margin-left: 0px;
     }
 }
 
