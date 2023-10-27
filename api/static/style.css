@@ -25,31 +25,31 @@ margin: 0 10px;
     margin-top: 8rem;
 }
 .classify{
-    display: flex;
-    align-items: center; /* Vertically center */
-    justify-content: center; 
-    margin-top: -4rem;
-  text-align: center;
+    display: flex !important;
+    align-items: center  !important;
+    justify-content: center  !important; 
+    margin-top: -4rem  !important;
+  text-align: center  !important;
    
-    width: 7.375rem;
-height: 2.0625rem;
-padding: 20px;
+    width: 7.375rem  !important;
+height: 2.0625rem  !important;
+padding: 20px  !important;
 
-border-radius: 0.75rem;
+border-radius: 0.75rem  !important;
 
 }
 .upcoming{
-    background: linear-gradient(94deg, #FF3B15 47.01%, rgba(221, 36, 118, 0.00) 120.75%);
+    background: linear-gradient(94deg, #FF3B15 47.01%, rgba(221, 36, 118, 0.00) 120.75%)  !important;
 }
 .popular{
-    background: linear-gradient(90deg, #D4145A 50%, rgba(251, 176, 59, 0.50) 131.26%);
+    background: linear-gradient(90deg, #D4145A 50%, rgba(251, 176, 59, 0.50) 131.26%)  !important;
 }
 .classify h6{
-    text-transform: uppercase;
-    font-family: 'Poppins';
-    margin: 0;
-    text-align: center;
-    font-size: 1rem;
+    text-transform: uppercase  !important;
+    font-family: 'Poppins'  !important;
+    margin: 0  !important;
+    text-align: center  !important;
+    font-size: 1rem  !important;
 }
 .card-2{
     border-radius: 0.875rem;
@@ -185,12 +185,12 @@ line-height: normal;
         margin: 5px 0; /* Add some vertical margin for spacing */
     }
     .classify{
-        position: absolute;
-       z-index: 100;
+        position: absolute  !important;
+       z-index: 100  !important; 
       
-  margin-top: -165px;
-       padding: 20px;
-       margin-left: 0px;
+  margin-top: -165px  !important;
+       padding: 20px  !important;
+       margin-left: 0px  !important;
     }
 }
 
