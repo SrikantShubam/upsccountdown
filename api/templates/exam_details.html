@@ -106,7 +106,7 @@
     
 
     <p id="quote"></p>
-    <form id="answer-form"  action="/answer" method="post" class="text-center">
+    <form id="answer-form"   method="post" class="text-center">
         <div class="search-box">
           <input type="text"  id="userInput" placeholder="Ask our Ai questions here">
           <button type="submit" id="submitQuestion"><i class="fa-solid fa-angle-right fa-lg"></i></button>
@@ -116,11 +116,21 @@
 </div>
 </div>
 
-   <script src="{{ url_for('static', filename='ai_question.js') }}">
-  
 
-   </script>
+<script>
+document.querySelector("#submitQuestion").addEventListener("click", function(e) {
+    e.preventDefault();  // Prevent form submission
+    
+    let userQuery = document.querySelector("#userInput").value;
+    console.log(userQuery);
+    let baseURL = "https://www.perplexity.ai/search?";
+    let encodedQuery = encodeURIComponent(userQuery);
+    let fullURL = baseURL + "q=" + encodedQuery + "&copilot=false";
+    window.open(fullURL, '_blank');
+ 
+});
 
+</script>
     <script src="{{ url_for('static', filename='countdown.js') }}"></script>
 
     <script type="module">
