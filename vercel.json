@@ -10,6 +10,5 @@
             "src": "/(.*)",
             "dest": "api/app.py"
         }
-    ],
-    "includeFiles": ["send_mail.py"]
+    ]
 }
