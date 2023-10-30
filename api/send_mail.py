@@ -34,8 +34,8 @@ def add_exam_request(exam_name):
         send_email(
         to_email=email,
         subject='New Exam Request Reminder',
-        content=f'A new exam named <h1> {exam_name} </h1> has been requested. Please review and add if applicable.'
-        
+        content=f"{exam_name}  has been requested.Please review and add if applicable."
+     
     )
         
         

@@ -17,8 +17,7 @@ from send_mail import add_exam_request
 from urllib.parse import quote_plus
 from flask_cors import CORS
 
-print(os.getcwd())
-print(os.listdir('.'))
+
 
 app = Flask(__name__)
 CORS(app)
@@ -121,6 +120,7 @@ def search():
 
 @app.route('/request-exam', methods=['POST'])
 def request_exam():
+  
     exam_name = request.form.get('exam_name')
     # Process this information. For now, we just print it.
     print(f"User has requested the addition of: {exam_name}")
