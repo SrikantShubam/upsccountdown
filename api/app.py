@@ -13,7 +13,7 @@ import datetime
 import re
 
 from fuzzywuzzy import fuzz
-from .send_mail import add_exam_request
+from send_mail import add_exam_request
 from urllib.parse import quote_plus
 from flask_cors import CORS
 
