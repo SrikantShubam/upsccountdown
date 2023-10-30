@@ -1,12 +1,24 @@
+import sys
+import os
+
+# Get the current directory
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Append the 'api' directory to the Python search path
+sys.path.append(current_directory)
+
 from flask import Flask, render_template, send_from_directory, redirect,url_for,request,jsonify
 import csv
 import datetime
 import re
-import os
+
 from fuzzywuzzy import fuzz
 from .send_mail import add_exam_request
 from urllib.parse import quote_plus
 from flask_cors import CORS
+
+print(os.getcwd())
+print(os.listdir('.'))
 
 app = Flask(__name__)
 CORS(app)
