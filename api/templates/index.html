@@ -10,6 +10,8 @@
 
   gtag('config', 'G-69LVMVYF0M');
 </script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UPSC 2024: Civil Services Exam Dates & Countdown Schedule</title>
@@ -30,9 +32,57 @@
         <span>Welcome to </span>
         <span class="decor">UPSC Countdown</span>
       </div>
-  
+      <form id="search-form" class="text-center">
+        <div class="search-box">
+          <input type="text"id="search-input" placeholder="Search for an examination">
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      
+        <div id="search-dropdown"></div>
+       
+    </form>
+    
+   
+    
 
 
+<script>
+
+$(document).ready(function() {
+    $("#search-input").on('input', function() {
+        let query = $(this).val();
+        console.log("User input:", query);
+
+        if (query.length > 2) {
+            $.get("{{ url_for('search') }}", { query: query }, function(data) {
+                let dropdownHtml = '<ul class="list-group">';
+                
+                if (data.length === 0) {
+                    // If no exams are found
+                    dropdownHtml += `<li class="list-group-item"><a href="#" id="request-exam">Request addition of: ${query}</a></li>`;
+                } else {
+                    for (let i = 0; i < data.length; i++) {
+                        let detailUrl = "/" + data[i].url_exam_name ;
+                        dropdownHtml += `<li><a href="${detailUrl}">${data[i]['Name of Examination']}</a></li>`;
+                    }
+                }
+
+                dropdownHtml += '</ul>';
+                $("#search-dropdown").html(dropdownHtml).show();
+            });
+        } else {
+            $("#search-dropdown").hide();
+        }
+    });
+    
+    $("#search-dropdown").on('click', '#request-exam', function(e) {
+        e.preventDefault();
+        alert('Thank you for your request. We will look into adding this exam soon.');
+    
+    });
+});
+
+</script>
       <div class="container top">
         <div class="row g-5">
             {% for exam in exams %}
@@ -50,7 +100,7 @@
                             {{ exam['Name of Examination'] }}
                         {% endif %}</h1>
                         <div class="d-flex">
-                            <a href="{{ url_for('exam_detail', exam_name=exam['url_exam_name'], year=exam['Year']) }}">
+                            <a href="{{ url_for('exam_detail', exam_name=exam['url_exam_name']) }}">
                                 <button class="btn">View More
                                   <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -145,6 +195,7 @@
       crossorigin="anonymous"
     ></script>
 
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   </body>
 </html>

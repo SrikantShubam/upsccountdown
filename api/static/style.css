@@ -4,11 +4,104 @@
 
 }
 
+.search-box {
+    font-family: 'Poppins';
+   padding: 0.5rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+ margin-top: 4rem;
+border: 1px solid #FFF;
+background: rgba(217, 217, 217, 0.00);
+    position: relative;
+    width: 24vw; /* or whatever width you want */
+} 
+.click{
+    font-family: "Inter"!important;
+background-color: white!important;
+color: black!important;
+padding: 0.2rem !important;
+font-size: 1rem!important;
+padding-left: 1rem!important;
+padding-right: 1rem!important;
+}
+#search-form input ,#answer-form input{
+   
+    width: 60%;
+    color:white;
+ border: none;
+    background: rgba(217, 217, 217, 0.00);
+}
+#search-form input:focus ,#answer-form input:focus {
+    border: none;
+    outline: none;
+}
+
+.search-box button {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+  
+   background-color: black!important;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px 16px;
+}
+
+#search-dropdown {
+    margin: 0 auto;
+    width: 60%;
+    margin-top: 1rem ;
+    border: 1px solid #ccc;
+    
+    border-radius: 1rem;
+
+border: 1px solid #FFF;
+background: rgba(217, 217, 217, 0.00);
+    position: relative;
+    width: 24vw;
+    overflow-y: auto;
+    display: none;  /* By default, the dropdown is hidden */
+}
+
+#search-dropdown ul {
+    list-style-type: none;
+    
+    padding: 0;
+    margin: 0;
+}
+
+#search-dropdown li {
+    font-family: 'Poppins';
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+
+#search-form input:-webkit-autofill,#answer-form input:-webkit-autofill
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-internal-autofill-selected {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid #ccc;
+   
+}
+
 body{
    
     background-color: black;
     color: white;
 }
+
+
 #head_text{
     text-transform: uppercase; 
 font-family: 'Poppins',sans-serif; 
@@ -38,6 +131,14 @@ padding: 20px  !important;
 border-radius: 0.75rem  !important;
 
 }
+/* #userInput{
+    padding: 0.4rem;
+    width: 29.375rem;
+color: white!important;
+    border-radius: 1rem;
+border: 1px solid #FFF;
+background: rgba(217, 217, 217, 0.00);
+} */
 .upcoming{
     background: linear-gradient(94deg, #FF3B15 47.01%, rgba(221, 36, 118, 0.00) 120.75%)  !important;
 }
@@ -130,6 +231,7 @@ line-height: normal;
     display: flex!important;
 }
 
+
 @media only screen and (min-width: 1024px) {
     
     #head_text{
@@ -191,6 +293,22 @@ line-height: normal;
   margin-top: -165px  !important;
        padding: 20px  !important;
        margin-left: 0px  !important;
+    }
+    .search-box {
+   
+   margin-top: 3rem;
+        width: 85vw; /* or whatever width you want */
+    } 
+   
+    #search-form input , #answer-form input{
+   
+        width: 80%;
+        color:white;
+     border: none;
+        background: rgba(217, 217, 217, 0.00);
+    }
+    #search-dropdown {
+        width: 90%;
     }
 }
 
